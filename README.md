@@ -58,8 +58,3 @@ cd trainingProjects/billEndorse
 ```
 access http://localhost:4000/ng/src/
 
-## Issue
-
-由于 fork 过来的项目没办法发 issue，暂时把 issue 记录在这里吧
-
-- [ ] issue 1 加入区块浏览器支持，@sunyoubo, @2018-12-14 之前完成
