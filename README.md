@@ -42,19 +42,41 @@ scripts/download_images.sh
 - 启动脚本
 
 ```bash
-cd trainingProjects/billEndorse 
+cd fabric-biz-sample/billEndorse
 npm install
 # 需要保证fabric-client 和 fabric-ca-client两个依赖包的版本在1.0.0
 # 启动node时会报错有可能是这两个包下载不全 应 `npm uninstall fabric-client` & `npm uninstall fabric-ca-client` 之后再重新安装这两个包
 npm install -g bower
 
-cd trainingProjects/billEndorse/public/ng
+cd fabric-biz-sample/billEndorse/public/ng
 bower install
 # 安装包时要确认一些包的版本 选择对应序号 敲回车即可
 
-cd trainingProjects/billEndorse 
+cd fabric-biz-sample/billEndorse
 ./setupFabricNetwork.sh
 ./createChannelAndInstallChaincode.sh
 ```
 access http://localhost:4000/ng/src/
 
+
+- 启动区块浏览器
+
+启动区块浏览器前需要完成Fabric网络的启动并且创建完成默认channel和安装chaincode。
+即已经执行完成如下脚本：
+```
+./setupFabricNetwork.sh
+./createChannelAndInstallChaincode.sh
+```
+
+1.修改explorer_config.json中的配置
+
+主要需要调整的为peers和orderers的IP地址
+
+2.启动浏览器：
+```
+./start_explorer.sh
+```
+3.使用浏览器访问：
+```
+http://localhost:8090
+```
