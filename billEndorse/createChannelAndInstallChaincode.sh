@@ -33,76 +33,76 @@ ORG2_TOKEN=$(curl -s -X POST \
 echo $ORG2_TOKEN
 ORG2_TOKEN=$(echo $ORG2_TOKEN | jq ".token" | sed "s/\"//g")
 echo
-echo "ORG2 token is $ORG2_TOKEN"
-echo
-echo
-echo "POST request Create channel  ..."
-echo
-curl -s -X POST \
-  http://localhost:4000/channels \
-  -H "authorization: Bearer $ORG1_TOKEN" \
-  -H "content-type: application/json" \
-  -d '{
-	"channelName":"mychannel",
-	"channelConfigPath":"../artifacts/channel/mychannel.tx"
-}'
-echo
-echo
-sleep 5
-echo "POST request Join channel on Org1"
-echo
-curl -s -X POST \
-  http://localhost:4000/channels/mychannel/peers \
-  -H "authorization: Bearer $ORG1_TOKEN" \
-  -H "content-type: application/json" \
-  -d '{
-	"peers": ["peer1","peer2"]
-}'
-echo
-echo
-
-echo "POST request Join channel on Org2"
-echo
-curl -s -X POST \
-  http://localhost:4000/channels/mychannel/peers \
-  -H "authorization: Bearer $ORG2_TOKEN" \
-  -H "content-type: application/json" \
-  -d '{
-	"peers": ["peer1","peer2"]
-}'
-echo
-echo
-
-echo "POST Install chaincode on Org1"
-echo
-curl -s -X POST \
-  http://localhost:4000/chaincodes \
-  -H "authorization: Bearer $ORG1_TOKEN" \
-  -H "content-type: application/json" \
-  -d '{
-	"peers": ["peer1", "peer2"],
-	"chaincodeName":"mycc",
-	"chaincodePath":"github.com/training",
-	"chaincodeVersion":"v0"
-}'
-echo
-echo
-
-
-echo "POST Install chaincode on Org2"
-echo
-curl -s -X POST \
-  http://localhost:4000/chaincodes \
-  -H "authorization: Bearer $ORG2_TOKEN" \
-  -H "content-type: application/json" \
-  -d '{
-	"peers": ["peer1","peer2"],
-	"chaincodeName":"mycc",
-	"chaincodePath":"github.com/example_cc",
-	"chaincodeVersion":"v0"
-}'
-echo
-echo
+#echo "ORG2 token is $ORG2_TOKEN"
+#echo
+#echo
+#echo "POST request Create channel  ..."
+#echo
+#curl -s -X POST \
+#  http://localhost:4000/channels \
+#  -H "authorization: Bearer $ORG1_TOKEN" \
+#  -H "content-type: application/json" \
+#  -d '{
+#	"channelName":"mychannel",
+#	"channelConfigPath":"../artifacts/channel/mychannel.tx"
+#}'
+#echo
+#echo
+#sleep 5
+#echo "POST request Join channel on Org1"
+#echo
+#curl -s -X POST \
+#  http://localhost:4000/channels/mychannel/peers \
+#  -H "authorization: Bearer $ORG1_TOKEN" \
+#  -H "content-type: application/json" \
+#  -d '{
+#	"peers": ["peer1","peer2"]
+#}'
+#echo
+#echo
+#
+#echo "POST request Join channel on Org2"
+#echo
+#curl -s -X POST \
+#  http://localhost:4000/channels/mychannel/peers \
+#  -H "authorization: Bearer $ORG2_TOKEN" \
+#  -H "content-type: application/json" \
+#  -d '{
+#	"peers": ["peer1","peer2"]
+#}'
+#echo
+#echo
+#
+#echo "POST Install chaincode on Org1"
+#echo
+#curl -s -X POST \
+#  http://localhost:4000/chaincodes \
+#  -H "authorization: Bearer $ORG1_TOKEN" \
+#  -H "content-type: application/json" \
+#  -d '{
+#	"peers": ["peer1", "peer2"],
+#	"chaincodeName":"mycc",
+#	"chaincodePath":"github.com/training",
+#	"chaincodeVersion":"v0"
+#}'
+#echo
+#echo
+#
+#
+#echo "POST Install chaincode on Org2"
+#echo
+#curl -s -X POST \
+#  http://localhost:4000/chaincodes \
+#  -H "authorization: Bearer $ORG2_TOKEN" \
+#  -H "content-type: application/json" \
+#  -d '{
+#	"peers": ["peer1","peer2"],
+#	"chaincodeName":"mycc",
+#	"chaincodePath":"github.com/example_cc",
+#	"chaincodeVersion":"v0"
+#}'
+#echo
+#echo
 
 echo "POST instantiate chaincode on peer1 of Org1"
 echo

@@ -19,7 +19,8 @@ var fs = require('fs');
 var util = require('util');
 var hfc = require('fabric-client');
 var Peer = require('fabric-client/lib/Peer.js');
-var EventHub = require('fabric-client/lib/EventHub.js');
+//var EventHub = require('fabric-client/lib/EventHub.js');
+var EventHub = require('fabric-client/lib/ChannelEventHub.js');
 var helper = require('./helper.js');
 var logger = helper.getLogger('instantiate-chaincode');
 var ORGS = hfc.getConfigSetting('network-config');
@@ -56,6 +57,7 @@ var instantiateChaincode = function(channelName, chaincodeName, chaincodeVersion
 
 		return channel.sendInstantiateProposal(request);
 	}, (err) => {
+		logger.error(err);
 		logger.error('Failed to initialize the channel');
 		throw new Error('Failed to initialize the channel');
 	}).then((results) => {

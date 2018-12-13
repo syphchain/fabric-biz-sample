@@ -12,7 +12,7 @@
          "secret":"adminpw"
       }
    ],
-   "request-timeout":450000,
+   "request-timeout":4500000,
    "mockupUsers": [
       {
          "username": "admin",
