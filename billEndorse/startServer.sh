@@ -21,4 +21,4 @@ else
 fi
 
 # start node
-forever start -l logs/forever.log -o logs/out.log -e logs/err.log app.js
+forever start -l logs/forever.log -o logs/out.log -e logs/err.log -a -p . app.js

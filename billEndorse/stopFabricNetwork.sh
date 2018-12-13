@@ -48,4 +48,4 @@ function restartNetwork() {
 
 restartNetwork
 
-killall node
+# killall node

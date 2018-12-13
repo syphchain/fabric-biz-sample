@@ -44,11 +44,11 @@ bower install
 cd fabric-biz-sample/billEndorse
 sudo ./setupFabricNetwork.sh
 
-# 运行，创建通道，安装cc，实例化cc，测试invoke，测试 query
-./installBillCc.sh
-
 # Start server
 ./startServer.sh
+
+# 运行，创建通道，安装cc，实例化cc，测试invoke，测试 query
+./installBillCc.sh
 ```
 access http://localhost:4000/ng/src/
 
