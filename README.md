@@ -7,6 +7,8 @@ Bill Endorse used the blockchain
 
 - 安装[node](https://www.cnblogs.com/guanine/p/9392411.html)(要求>=8.9.0, <9.0)
 
+or https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-16-04
+
 - 安装[npm](https://www.cnblogs.com/guanine/p/9392411.html)
 
 - 安装git
