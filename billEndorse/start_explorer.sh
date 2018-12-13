@@ -16,4 +16,4 @@ cp -r ./artifacts/channel/crypto-config/* ./blockchain-explorer/examples/sbc_net
 cp explorer_config.json ./blockchain-explorer/examples/sbc_net/config.json
 
 cd blockchain-explorer
-bash ./deploy_explorer.sh sbc_net
+bash ./deploy_explorer.sh sbc_net artifacts_default
