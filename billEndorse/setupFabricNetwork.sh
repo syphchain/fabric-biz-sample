@@ -57,6 +57,7 @@ function installNodeModules() {
 
 restartNetwork
 
-installNodeModules
+# Move to startServer.sh
+# installNodeModules
 
-PORT=4000 node app
+# PORT=4000 node app
