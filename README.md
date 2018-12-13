@@ -37,6 +37,7 @@ sudo pip install docker-compose
 cd fabric-biz-sample/billEndorse
 npm install
 npm install -g bower
+npm install -g forever
 
 cd fabric-biz-sample/billEndorse/public/ng
 bower install
