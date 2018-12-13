@@ -5,7 +5,9 @@ Bill Endorse used the blockchain
 ## deploy
 操作命令时可能 使用 `sudo`
 
-- 安装[node](https://www.cnblogs.com/guanine/p/9392411.html)(要求6.9.0-6.10.0)
+- 安装[node](https://www.cnblogs.com/guanine/p/9392411.html)(要求>=8.9.0, <9.0)
+
+or https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-16-04
 
 - 安装[npm](https://www.cnblogs.com/guanine/p/9392411.html)
 
@@ -28,19 +30,6 @@ sudo apt install python pip
 sudo pip install docker-compose
 ```
 
-- 下载fabric镜像
-
-这一步可以不做，在启动的时候会自动拉取最新的image
-
-```bash
-# 克隆compose模板文件
-sudo git clone https://github.com/yeasy/docker-compose-files
-# 找到对应版本的镜像v1.3.0最新版本
-cd /docker-compose-files/hyperledger_fabric/v1.3.0
-# 执行镜像下载脚本
-scripts/download_images.sh
-
-```
 
 - 启动脚本
 
@@ -53,10 +42,13 @@ cd fabric-biz-sample/billEndorse/public/ng
 bower install
 
 cd fabric-biz-sample/billEndorse
-sudo ./runApp.sh
+sudo ./setupFabricNetwork.sh
 
 # 运行，创建通道，安装cc，实例化cc，测试invoke，测试 query
 ./installBillCc.sh
+
+# Start server
+./startServer.sh
 ```
 access http://localhost:4000/ng/src/
 
@@ -67,7 +59,7 @@ access http://localhost:4000/ng/src/
 即已经执行完成如下脚本：
 ```
 ./setupFabricNetwork.sh
-./createChannelAndInstallChaincode.sh
+./installBillCc.sh
 ```
 
 1.修改explorer_config.json中的配置
