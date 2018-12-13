@@ -5,7 +5,7 @@ Bill Endorse used the blockchain
 ## deploy
 操作命令时可能 使用 `sudo`
 
-- 安装[node](https://www.cnblogs.com/guanine/p/9392411.html)(要求6.9.0-6.10.0)
+- 安装[node](https://www.cnblogs.com/guanine/p/9392411.html)(要求>=8.9.0, <9.0)
 
 - 安装[npm](https://www.cnblogs.com/guanine/p/9392411.html)
 
