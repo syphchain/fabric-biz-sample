@@ -8,8 +8,9 @@ app.controller('SigninFormController', ['$scope','$rootScope', '$http', '$state'
     $scope.authError = null;
     $scope.login = function() {
       $scope.authError = null;
+      console.log(">>>>> Login", $scope.user);
       // Try to login
-      HttpService.post(REST_URL.login, {username: $scope.user.email, password: $scope.user.password, orgName: "org1"}).then(function (response) {
+      HttpService.post(REST_URL.login, {username: $scope.user.email, password: $scope.user.password, orgName: "Org1"}).then(function (response) {
     	  if ( response.data.success) {
               var loginName = response.data.user.name;
               $localStorage.loginRole = loginName;

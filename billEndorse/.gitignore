@@ -6,3 +6,6 @@ node_modules/*
 .log
 .DS_Store
 */.DS_Store
+
+/package-lock.json
+/fabric-client-kv-org*
