@@ -42,10 +42,13 @@ cd fabric-biz-sample/billEndorse/public/ng
 bower install
 
 cd fabric-biz-sample/billEndorse
-sudo ./runApp.sh
+sudo ./setupFabricNetwork.sh
 
 # 运行，创建通道，安装cc，实例化cc，测试invoke，测试 query
 ./installBillCc.sh
+
+# Start server
+./startServer.sh
 ```
 access http://localhost:4000/ng/src/
 
@@ -55,7 +58,7 @@ access http://localhost:4000/ng/src/
 启动区块浏览器前需要完成Fabric网络的启动并且创建完成默认channel和安装chaincode。
 即已经执行完成如下脚本：
 ```
-./runApp.sh
+./setupFabricNetwork.sh
 ./installBillCc.sh
 ```
 
