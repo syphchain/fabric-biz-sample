@@ -66,8 +66,8 @@ access http://localhost:4000/ng/src/
 启动区块浏览器前需要完成Fabric网络的启动并且创建完成默认channel和安装chaincode。
 即已经执行完成如下脚本：
 ```
-./setupFabricNetwork.sh
-./createChannelAndInstallChaincode.sh
+./runApp.sh
+./installBillCc.sh
 ```
 
 1.修改explorer_config.json中的配置
