@@ -4,7 +4,6 @@
    "jwt_expiretime": "36000",
    "channelName":"mychannel",
    "CC_SRC_PATH":"../artifacts",
-   "keyValueStore":"/tmp/fabric-client-kvs",
    "eventWaitTime":"30000",
    "admins":[
       {
@@ -12,8 +11,8 @@
          "secret":"adminpw"
       }
    ],
-   "request-timeout":450000,
-   "mockupUsers": [
+   "request-timeout":4500000,
+   "mockUsers": [
       {
          "username": "admin",
          "name": "管理员",

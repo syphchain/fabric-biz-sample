@@ -8,9 +8,11 @@ angular.module('app').constant(
 			    'logout': '/logout',
 
 				// invoke
-				'invoke': '/channels/mychannel/chaincodes/mycc/invoke',
+				//'invoke': '/channels/mychannel/chaincodes/mycc/invoke',
+				'invoke': '/channels/mychannel/chaincodes/mycc',
                 // query
 				'query': '/channels/mychannel/chaincodes/mycc/query'
+				// 'query': '/channels/mychannel/chaincodes/mycc'
 
 			}
 	);

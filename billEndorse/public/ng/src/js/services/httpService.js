@@ -13,7 +13,8 @@ angular.module('app').factory('HttpService', [ '$http','$q','REST_URL','$rootSco
             //     "token":sessionStorage.getItem("token")
             // }
             if (data != null) {
-            	data.peers = ["peer1"];
+            	// data.peers = ["peer1"];
+				data.peers = ["peer0.org1.example.com"];
                 data.token = sessionStorage.getItem("token");
 			}
 	    	var req = {

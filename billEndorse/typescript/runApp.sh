@@ -31,8 +31,7 @@ function restartNetwork() {
 	echo
 
         #teardown the network and clean the containers and intermediate images
-	cd artifacts
-	docker-compose down
+	docker-compose -f ../artifacts/docker-compose.yaml down
 	dkcl
 	dkrm
 
@@ -40,8 +39,7 @@ function restartNetwork() {
 	rm -rf /tmp/hfc-test-kvs_peerOrg* $HOME/.hfc-key-store/ /tmp/fabric-client-kvs_peerOrg*
 
 	#Start the network
-	docker-compose up -d
-	cd -
+	docker-compose -f ../artifacts/docker-compose.yaml up -d
 	echo
 }
 
@@ -53,12 +51,21 @@ function installNodeModules() {
 		echo "============== Installing node modules ============="
 		npm install
 	fi
+	copyIndex fabric-client/index.d.ts
+	copyIndex fabric-ca-client/index.d.ts
 	echo
 }
 
-
+function copyIndex() {
+	if [ ! -f node_modules/$1 ]; then
+		cp types/$1 node_modules/$1
+	fi
+}
+	
 restartNetwork
 
 installNodeModules
 
-PORT=4000 node app
+
+
+PORT=4000 ts-node app.ts

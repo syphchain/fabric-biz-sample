@@ -29,6 +29,9 @@ sudo pip install docker-compose
 ```
 
 - 下载fabric镜像
+
+这一步可以不做，在启动的时候会自动拉取最新的image
+
 ```bash
 # 克隆compose模板文件
 sudo git clone https://github.com/yeasy/docker-compose-files
@@ -44,17 +47,16 @@ scripts/download_images.sh
 ```bash
 cd fabric-biz-sample/billEndorse
 npm install
-# 需要保证fabric-client 和 fabric-ca-client两个依赖包的版本在1.0.0
-# 启动node时会报错有可能是这两个包下载不全 应 `npm uninstall fabric-client` & `npm uninstall fabric-ca-client` 之后再重新安装这两个包
 npm install -g bower
 
 cd fabric-biz-sample/billEndorse/public/ng
 bower install
-# 安装包时要确认一些包的版本 选择对应序号 敲回车即可
 
 cd fabric-biz-sample/billEndorse
-./setupFabricNetwork.sh
-./createChannelAndInstallChaincode.sh
+sudo ./runApp.sh
+
+# 运行，创建通道，安装cc，实例化cc，测试invoke，测试 query
+./installBillCc.sh
 ```
 access http://localhost:4000/ng/src/
 
