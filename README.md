@@ -28,19 +28,6 @@ sudo apt install python pip
 sudo pip install docker-compose
 ```
 
-- 下载fabric镜像
-
-这一步可以不做，在启动的时候会自动拉取最新的image
-
-```bash
-# 克隆compose模板文件
-sudo git clone https://github.com/yeasy/docker-compose-files
-# 找到对应版本的镜像v1.3.0最新版本
-cd /docker-compose-files/hyperledger_fabric/v1.3.0
-# 执行镜像下载脚本
-scripts/download_images.sh
-
-```
 
 - 启动脚本
 
