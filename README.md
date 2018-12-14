@@ -9,6 +9,10 @@ Bill Endorse used the blockchain
 
 or https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-16-04
 
+```
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
 - 安装[npm](https://www.cnblogs.com/guanine/p/9392411.html)
 
 - 安装git
