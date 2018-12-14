@@ -9,6 +9,10 @@ Bill Endorse used the blockchain
 
 or https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-16-04
 
+```
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
 - 安装[npm](https://www.cnblogs.com/guanine/p/9392411.html)
 
 - 安装git
@@ -29,6 +33,12 @@ sudo curl -fsSL https://get.docker.com/ | sh
 sudo apt install python pip
 sudo pip install docker-compose
 ```
+或者
+```
+$ wget https://github.com/docker/compose/releases/download/1.20.1/docker-compose-Linux-x86_64
+$ chmod +x docker-compose-Linux-x86_64
+$ sudo mv docker-compose-Linux-x86_64 /usr/local/bin/docker-compose
+```
 
 
 - 启动脚本
@@ -44,6 +54,10 @@ bower install
 
 cd fabric-biz-sample/billEndorse
 sudo ./setupFabricNetwork.sh
+
+# 运行，创建通道，安装cc，实例化cc，测试invoke，测试 query
+sudo apt-get install jq
+./installBillCc.sh
 
 # Start server
 ./startServer.sh
