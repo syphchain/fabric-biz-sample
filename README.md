@@ -33,6 +33,12 @@ sudo curl -fsSL https://get.docker.com/ | sh
 sudo apt install python pip
 sudo pip install docker-compose
 ```
+或者
+```
+$ wget https://github.com/docker/compose/releases/download/1.20.1/docker-compose-Linux-x86_64
+$ chmod +x docker-compose-Linux-x86_64
+$ sudo mv docker-compose-Linux-x86_64 /usr/local/bin/docker-compose
+```
 
 
 - 启动脚本
