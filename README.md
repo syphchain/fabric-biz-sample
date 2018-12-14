@@ -82,7 +82,7 @@ access http://localhost:4000/ng/src/
 
 2.启动浏览器：
 ```
-./start_explorer.sh
+sudo ./start_explorer.sh
 ```
 3.使用浏览器访问：
 ```
